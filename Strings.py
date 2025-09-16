@@ -106,6 +106,11 @@ class Solution:
         if len(s) != len(goal):
             return False
         return goal in (s + s)
+# Example usage:
+s = "abcde"
+goal = "cdeab"
+solution = Solution()
+print(solution.rotateString(s, goal))
     
 # Valid Anagram  (a word or phrase formed by rearranging the letters of a different word or phrase)
 class Solution:
