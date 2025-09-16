@@ -42,6 +42,37 @@ nums = [4, 1, 2, 1, 2]
 solution = Solution()
 print(solution.singleNumber(nums))
 
+# Longest subarray with sum k 
+
+class Solution:
+    def maxSubArrayLen(self, nums, k):
+        sum_index_map = {}
+        current_sum = 0
+        max_length = 0
+        
+        for i in range(len(nums)):
+            current_sum += nums[i]
+            
+            if current_sum == k:
+                max_length = i + 1
+            
+            if (current_sum - k) in sum_index_map:
+                max_length = max(max_length, i - sum_index_map[current_sum - k])
+            
+            if current_sum not in sum_index_map:
+                sum_index_map[current_sum] = i
+        
+        return max_length
+# Example usage:
+nums = [1, -1, 5, -2, 3]
+k = 3
+solution = Solution()
+print(solution.maxSubArrayLen(nums, k))
+
+
+
+
+
       
 
         
