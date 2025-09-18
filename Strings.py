@@ -123,3 +123,18 @@ s = "anagram"
 t = "nagaram"
 solution = Solution()
 print(solution.isAnagram(s, t))
+
+
+# Sort Characters By Frequency
+from collections import Counter
+class Solution:
+    def frequencySort(self, s):
+        freq = Counter(s)
+        sorted_chars = sorted(freq.items(), key=lambda x: x[1], reverse=True)
+        result = ''.join([i*j for i, j in sorted_chars])
+        return result
+    
+# Example usage:
+s = "tree"  
+solution = Solution()
+print(solution.frequencySort(s))
