@@ -159,3 +159,94 @@ class Solution:
 s = "(1+(2*3)+((8)/4))+1"
 solution = Solution()
 print(solution.maxDepth(s))
+
+
+# Roman number to Integer
+class Solution:
+    def romanToInt(self, s):
+        roman_numerals = {
+            'I': 1,
+            'V': 5,
+            'X': 10,
+            'L': 50,
+            'C': 100,
+            'D': 500,
+            'M': 1000
+        }
+        
+        total = 0
+        prev_value = 0
+        
+        for i in s:
+            current_value = roman_numerals[i]
+            if current_value > prev_value:
+                total += current_value - 2 * prev_value
+            else:
+                total += current_value
+            prev_value = current_value
+        return total
+    
+# Example usage:
+s = "MCMXCIV"
+solution = Solution()
+print(solution.romanToInt(s))
+
+# Integer to Roman
+class Solution:
+    def intToRoman(self, num):
+        val = [
+            1000, 900, 500, 400,
+            100, 90, 50, 40,
+            10, 9, 5, 4,
+            1
+        ]
+        syms = [
+            "M", "CM", "D", "CD",
+            "C", "XC", "L", "XL",
+            "X", "IX", "V", "IV",
+            "I"
+        ]
+        
+        roman_numeral = ""
+        i = 0
+        while num > 0:
+            for _ in range(num // val[i]):
+                roman_numeral += syms[i]
+                num -= val[i]
+            i += 1
+        return roman_numeral
+    
+# String to Integer (atoi)
+class Solution:
+    def myAtoi(self, s):
+        s = s.lstrip()  # Remove leading whitespace
+        if not s:
+            return 0
+        
+        sign = 1
+        if s[0] in ('-', '+'):
+            if s[0] == '-':
+                sign = -1
+            s = s[1:]
+        
+        num = 0
+        for char in s:
+            if char.isdigit():
+                num = num * 10 + int(char)
+            else:
+                break
+        
+        num *= sign
+        INT_MIN, INT_MAX = -2**31, 2**31 - 1
+        if num < INT_MIN:
+            return INT_MIN
+        if num > INT_MAX:
+            return INT_MAX
+        return num
+    
+# Example usage:
+s = "   -42"    
+solution = Solution()
+print(solution.myAtoi(s))
+
+
