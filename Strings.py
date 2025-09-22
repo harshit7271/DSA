@@ -249,4 +249,7 @@ s = "   -42"
 solution = Solution()
 print(solution.myAtoi(s))
 
+# COUNT THE NUMBER OF SUBSTRINGS
 
+class solution :
+    
