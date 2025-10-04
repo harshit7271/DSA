@@ -27,4 +27,12 @@ class Solution:
             current = current.next
         
         
+# Linked list insertion 
+
+class Node:
+    def __init__(self,data) :
+        self.data = data
+        self.next = None
+
         
+              
