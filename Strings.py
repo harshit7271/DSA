@@ -247,9 +247,34 @@ class Solution:
 # Example usage:
 s = "   -42"    
 solution = Solution()
-print(solution.myAtoi(s))
+print(solution.myAtoi(solution))
 
-# COUNT THE NUMBER OF SUBSTRINGS
 
-class solution :
+# REVERSE A STRING
+
+class Solution(object):
+    def reverseString(self, s):    
+        s.reverse()         # when s is already a list otherwise convert it in list if its an array
+        return "".join(s)   # this will merge the list 
     
+
+# MIN MAX SUM IN AN ARRAY
+
+class Solution:
+    def findSum(self, A, N):
+      
+        #if N == 1:
+         #   return A[0] * 2
+        
+        #mini = maxi = A[0]
+        #for i in range(1, N):
+            #if A[i] > maxi:
+                #maxi = A[i]
+            #elif A[i] < mini:
+                #mini = A[i]
+        #return maxi + mini
+        #OR
+        return max(A) + min(A)
+
+
+
