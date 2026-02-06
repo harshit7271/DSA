@@ -12,3 +12,18 @@ print('\n')
 arr1 = array('i', [8, 3, 7, 1, 8, 5])
 sorted_arr = array('i', sorted(arr1))
 print(sorted_arr)
+
+
+# merging
+print('\n')
+arr4 = arr1 + val
+print(arr4)
+
+
+# splitting
+print('\n')
+idx = int(len(arr4)/2)
+print(idx)
+
+print(arr4[idx:])
+print(arr4[:idx])
