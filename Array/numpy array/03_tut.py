@@ -46,5 +46,14 @@ print(f"sorted array = {np5}")
 
 # merging numpy arrays
 print('\n')
-print(np.concatenate((np1, np5)))
+np7 = np.concatenate((np1, np5))
+print(np7)
 # output : [10 30 40 50  1  2  3  4  5  6  7]
+
+
+# Splitting
+print('\n')
+split1, split2, split3 = np.array_split(np7, 3)
+print(f"\n {split1}")
+print(f"\n {split2}")
+print(f"\n {split3}")
