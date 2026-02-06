@@ -7,4 +7,8 @@ reversedArray = val[::-1]
 for i in range(0, len(reversedArray)):
     print(reversedArray[i], end=" ")
 
-# NEXT
+# sorting an array
+print('\n')
+arr1 = array('i', [8, 3, 7, 1, 8, 5])
+sorted_arr = array('i', sorted(arr1))
+print(sorted_arr)
