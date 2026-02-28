@@ -14,7 +14,6 @@ print(f'{reversed_data} is the reversed list')
 
 
 """
-
 n = len(data) - 1
 reversed_data2 = []
 while n >= 0:
