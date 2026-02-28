@@ -8,3 +8,7 @@ for i in item:
         count += 1
 
 print(count)
+
+
+# we can also use the built- in function count()
+"""items.count(target)"""
