@@ -41,3 +41,31 @@ def twoSum(nums, target):
         for j in range(i+1, len(nums)):
             if nums[i] + nums[j] == target:
                 return [i, j]
+
+
+# max subarray sum
+
+def maxSubArray(self, nums):
+    n = len(nums)
+    maxi = float("-inf")
+    for i in range(0, n):
+        total = 0
+        for j in range(i, n):
+            total = total + nums[j]
+            maxi = max(maxi, total)
+    return maxi
+
+# other way
+
+
+def maxSubArrar2(self, nums):
+    n = len(nums)
+    maxi = float("-inf")
+    total = 0
+
+    for i in range(0, n):
+        total = total + nums[i]
+        maxi = max(maxi, total)
+        if total < 0:
+            total = 0
+    return maxi
