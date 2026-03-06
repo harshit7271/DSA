@@ -96,3 +96,13 @@ def maxProfit(self, prices: List[int]) -> int:
         else:
             max_profit = max(max_profit, price - buy)
     return max_profit
+
+
+# Find the missing number
+
+def missingNumber(self, nums: List[int]) -> int:
+    nums.sort()
+    for i in range(len(nums)):
+        if i != nums[i]:
+            return i
+    return len(nums)
