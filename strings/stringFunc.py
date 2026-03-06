@@ -1,5 +1,8 @@
 # Reverse String
 
+from typing import List
+
+
 class Solution:
     def reverseString(self, s: List[str]) -> None:
         l, r = 0, len(s) - 1
@@ -79,3 +82,17 @@ def moveZeros(self, nums: List[int]) -> None:
         if nums[i] != 0:
             nums[j], nums[i] = nums[i], nums[i]
             j += 1
+
+# best time to buy and sell stock
+
+
+def maxProfit(self, prices: List[int]) -> int:
+    buy = prices[0]
+    max_profit = 0
+
+    for price in prices:
+        if price < buy:
+            buy = price
+        else:
+            max_profit = max(max_profit, price - buy)
+    return max_profit
