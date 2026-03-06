@@ -106,3 +106,9 @@ def missingNumber(self, nums: List[int]) -> int:
         if i != nums[i]:
             return i
     return len(nums)
+
+# or
+
+
+def missingNum(self, nums: List[int]) -> int:
+    return len(nums)*(len(nums)+1)//2 - sum(nums)
