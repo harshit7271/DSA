@@ -112,3 +112,15 @@ def missingNumber(self, nums: List[int]) -> int:
 
 def missingNum(self, nums: List[int]) -> int:
     return len(nums)*(len(nums)+1)//2 - sum(nums)
+
+
+# first unique character in a string
+class Solution(object):
+    def firstUniqChar(self, s):
+        j = {}  # create a dict to store frequency
+        for x in s:
+            j[x] = j.get(x, 0) + 1
+        for i, x in enumerate(s):
+            if j[x] == 1:
+                return i
+        return -1
