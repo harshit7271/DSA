@@ -1,3 +1,4 @@
+from collections import defaultdict
 from typing import List
 
 
@@ -176,6 +177,16 @@ def isAnagram(self, s, t):
         if s_count[char] == 0:
             del s_count[char]
     return len(s_count) == 0
+
+
+# group Anagram
+
+
+def groupAnagrams(self, strs):
+    dic = defaultdict(list)
+    for word in strs:
+        dic["".join(sorted(word))].append(word)
+    return dic.values()
 
 
 # length of longest substring without repeating characters
