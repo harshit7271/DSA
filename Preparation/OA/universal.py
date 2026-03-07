@@ -176,3 +176,20 @@ def isAnagram(self, s, t):
         if s_count[char] == 0:
             del s_count[char]
     return len(s_count) == 0
+
+
+# length of longest substring without repeating characters
+
+class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        max_length = 0
+        start = 0
+        end = 0
+        d = {}
+        while end < len(s):
+            if s[end] in d and d[s[end]] >= start:
+                start = d[s[end]] + 1
+            max_length = max(max_length, end - start + 1)
+            d[s[end]] = end
+            end += 1
+        return max_length
