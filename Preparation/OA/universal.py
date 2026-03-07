@@ -161,3 +161,18 @@ class Solution(object):
             if j[x] == 1:
                 return i
         return -1
+
+
+# Valid Anagram
+
+def isAnagram(self, s, t):
+    # return sorted(s)==sorted(t)
+    # return Counter(s) == Counter(t)
+    s_count = Counter(s)
+    for char in t:
+        if char not in s_count:
+            return False
+        s_count[char] -= 1
+        if s_count[char] == 0:
+            del s_count[char]
+    return len(s_count) == 0
