@@ -193,3 +193,19 @@ class Solution(object):
             d[s[end]] = end
             end += 1
         return max_length
+
+# other way
+
+
+def lengthOfLongestSubstring(self, s):
+    charSet = set()
+    res = 0
+    left = 0
+
+    for right in range(len(s)):
+        while s[right] in charSet:
+            charSet.remove(s[left])  # remove all the duplicates
+            left += 1
+        charSet.add(s[right])
+        res = max(res, right - left + 1)
+    return res
