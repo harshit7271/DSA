@@ -1,3 +1,6 @@
+from collections import Counter, defaultdict
+import heapq
+
 # Merge intervals
 """[[1,3],[2,6],[8,10],[15,18]"""
 
@@ -61,3 +64,30 @@ def coinNum(self, coins, amount):
             result.append(coins[i])
             N -= coins[i]
     return result
+
+# Top K frequent elements
+
+
+class Solution(object):
+    def topKFrequent(self, nums, k):
+        """
+        d = defaultdict(int)
+        # will count the number of occurance of every elements
+        for num in nums:
+            d[num] += 1
+        heap = []  
+        for key, val in d.items(): 
+            if len(heap) < k or val > heap[0][0]: 
+                heapq.heappush(heap, [val, key])
+            if len(heap) > k:
+                heapq.heappop(heap)
+        return [i[1] for i in heap]
+        """
+        d = Counter(nums)
+        heap = []
+        for num, freq in d.items():
+            heapq.heappush(heap, (-freq, num))
+        res = []
+        for _ in range(k):
+            res.append(heapq.heappop(heap)[1])
+        return res
