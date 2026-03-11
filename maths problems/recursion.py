@@ -1,4 +1,4 @@
-# calling a fuction inside the same function
+# calling a fuction inside the same function, recursion is process of defining something in terms of itself
 
 def factorial(n):
     if n == 0 or n == 1:
