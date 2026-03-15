@@ -151,3 +151,16 @@ def thirdMax(sel, nums):
       nums.remove(max(nums))
       return max(nums)
     """
+
+# find pivot index
+
+
+def pivotIndex(self, nums):
+    left_sum = 0
+    right_sum = sum[nums]  # type: ignore
+    for i in range(len(nums)):
+        right_sum -= nums[i]
+        if left_sum == right_sum:
+            return i
+        left_sum += nums[i]
+    return -1
