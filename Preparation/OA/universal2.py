@@ -131,3 +131,23 @@ def findMissingNumbers(self, nums):
         if nums[i] > 0:
             missing.append(i+1)
     return missing
+
+
+# find  the third last distict numbers
+
+def thirdMax(sel, nums):
+
+    nums = list(set(nums))  # get rid of duplicates
+    nums.sort()
+    if len(nums) <= 2:
+        return nums[-1]
+    return nums[-3]
+
+    """
+      nums = set(nums)
+      if len(nums) < 3:
+          return max(nums)
+      nums.remove(max(nums))
+      nums.remove(max(nums))
+      return max(nums)
+    """
