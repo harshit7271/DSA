@@ -107,3 +107,13 @@ def fib(self, n):
     for _ in range(2, n+1):
         a, b = b, a + b
     return b
+
+
+# remove duplicates
+def reemoveDuplicates(self, nums):
+    left = 1
+    for right in range(1, len(nums)):
+        if nums[right] != nums[right-1]:
+            nums[left] = nums[right]
+            left += 1
+    return left
