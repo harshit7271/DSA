@@ -22,7 +22,7 @@ def merge(self, intervals):
 """[2,0,2,1,1,0]"""
 
 
-class Solution(object):
+class solution(object):
 
     def sortColors(self, nums):
         """
@@ -164,3 +164,16 @@ def pivotIndex(self, nums):
             return i
         left_sum += nums[i]
     return -1
+
+
+# First Unique Character in String
+
+def canContruct(self, ransomNote, magazine):
+    d = defaultdict(int)
+    for char in magazine:
+        d[char] += 1
+    for char in ransomNote:
+        if d[char] not in d or d[char] <= 0:
+            return False
+        d[char] -= 1
+    return True

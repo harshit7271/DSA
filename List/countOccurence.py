@@ -9,6 +9,5 @@ for i in item:
 
 print(count)
 
-
 # we can also use the built- in function count()
 """items.count(target)"""
